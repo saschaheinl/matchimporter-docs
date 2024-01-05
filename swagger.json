@@ -375,14 +375,17 @@
           "properties": {
             "id": {
               "type": "integer",
+              "description": "Id of that contact in the contacts database.",
               "format": "int32"
             },
             "teamName": {
               "type": "string",
+              "description": "Name of the team that contact is responsible for.",
               "nullable": true
             }
           },
-          "additionalProperties": false
+          "additionalProperties": false,
+          "description": "Response contract for getting all team contacts."
         },
         "CourtRequestContract": {
           "type": "object",
@@ -443,40 +446,57 @@
             },
             "pdfFile": {
               "type": "string",
+              "description": "PDF game report as Base64 string.",
               "nullable": true
             }
           },
-          "additionalProperties": false
+          "additionalProperties": false,
+          "description": "Contract for adding a new Match."
         },
         "CreateTeamContactRequestContract": {
+          "required": [
+            "clubName",
+            "firstName",
+            "lastName",
+            "mailAddress",
+            "teamName"
+          ],
           "type": "object",
           "properties": {
             "teamName": {
+              "minLength": 1,
               "type": "string",
-              "nullable": true
+              "description": "Name of the team the contact is contact person for."
             },
             "clubName": {
+              "minLength": 1,
               "type": "string",
-              "nullable": true
+              "description": "Name of the club the team is from"
             },
             "salutation": {
               "type": "string",
-              "nullable": true
+              "description": "Greeting the contact prefers in German language.",
+              "nullable": true,
+              "example": "Frau"
             },
             "firstName": {
+              "minLength": 1,
               "type": "string",
-              "nullable": true
+              "description": "First name of the contact person."
             },
             "lastName": {
+              "minLength": 1,
               "type": "string",
-              "nullable": true
+              "description": "Last name of the contact person."
             },
             "mailAddress": {
+              "minLength": 1,
               "type": "string",
-              "nullable": true
+              "description": "Mail address the contact person prefers to receive mails from us."
             }
           },
-          "additionalProperties": false
+          "additionalProperties": false,
+          "description": "Contract for creating a team contact person."
         },
         "GameRequestContract": {
           "type": "object",
@@ -832,60 +852,75 @@
           "properties": {
             "id": {
               "type": "integer",
+              "description": "Id of that contact in the contacts database.",
               "format": "int32"
             },
             "teamName": {
               "type": "string",
+              "description": "Name of the team that contact is responsible for.",
               "nullable": true
             },
             "clubName": {
               "type": "string",
+              "description": "Name of the club the team is from.",
               "nullable": true
             },
             "salutation": {
               "type": "string",
+              "description": "Salutation in German language the contact desires.",
               "nullable": true
             },
             "firstName": {
               "type": "string",
+              "description": "First name or names of the contact",
               "nullable": true
             },
             "lastName": {
               "type": "string",
+              "description": "Last name of the contact",
               "nullable": true
             },
             "mailAddress": {
               "type": "string",
+              "description": "Mail address where the contact wishes to receive emails.",
               "nullable": true
             }
           },
-          "additionalProperties": false
+          "additionalProperties": false,
+          "description": "Response contract for a single team contact."
         },
         "UpdateTeamContactRequestContract": {
           "type": "object",
           "properties": {
             "teamName": {
               "type": "string",
+              "description": "Name of the team the contact is contact person for.",
               "nullable": true
             },
             "clubName": {
               "type": "string",
+              "description": "Name of the club the team is from",
               "nullable": true
             },
             "salutation": {
               "type": "string",
-              "nullable": true
+              "description": "Greeting the contact prefers in German language.",
+              "nullable": true,
+              "example": "Frau"
             },
             "firstName": {
               "type": "string",
+              "description": "First name of the contact person.",
               "nullable": true
             },
             "lastName": {
               "type": "string",
+              "description": "Last name of the contact person.",
               "nullable": true
             },
             "mailAddress": {
               "type": "string",
+              "description": "Mail address the contact person prefers to receive mails from us.",
               "nullable": true
             }
           },
