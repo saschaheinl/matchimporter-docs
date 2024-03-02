@@ -4,7 +4,7 @@
 # Rider ignored files
 /contentModel.xml
 /modules.xml
-/.idea.matchimporter-docs.dir
+/.idea.matchimporter-docs.dir/*
 /projectSettingsUpdater.xml
 # Editor-based HTTP Client requests
 /httpRequests/
