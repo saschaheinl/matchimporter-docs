@@ -185,6 +185,127 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Matches",
+			"item": [
+				{
+					"name": "Create Match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"matchJson\": {},\n  \"pdfFile\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dblv.saschahei.nl/api/matches",
+							"protocol": "https",
+							"host": [
+								"dblv",
+								"saschahei",
+								"nl"
+							],
+							"path": [
+								"api",
+								"matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dblv.saschahei.nl/api/matches/:matchId",
+							"protocol": "https",
+							"host": [
+								"dblv",
+								"saschahei",
+								"nl"
+							],
+							"path": [
+								"api",
+								"matches",
+								":matchId"
+							],
+							"variable": [
+								{
+									"key": "matchId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Match PDF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dblv.saschahei.nl/api/matches/:matchId/pdf",
+							"protocol": "https",
+							"host": [
+								"dblv",
+								"saschahei",
+								"nl"
+							],
+							"path": [
+								"api",
+								"matches",
+								":matchId",
+								"pdf"
+							],
+							"variable": [
+								{
+									"key": "matchId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Match JSON",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dblv.saschahei.nl/api/matches/:matchId/json",
+							"protocol": "https",
+							"host": [
+								"dblv",
+								"saschahei",
+								"nl"
+							],
+							"path": [
+								"api",
+								"matches",
+								":matchId",
+								"json"
+							],
+							"variable": [
+								{
+									"key": "matchId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
