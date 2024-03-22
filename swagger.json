@@ -71,7 +71,24 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchResponseContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchResponseContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchResponseContract"
+                }
+              }
+            }
           },
           "404": {
             "description": "Not Found",
@@ -582,6 +599,50 @@
         },
         "additionalProperties": false,
         "description": "Contract for creating a team contact person."
+      },
+      "MatchResponseContract": {
+        "type": "object",
+        "properties": {
+          "matchId": {
+            "type": "string",
+            "description": "Id of the match in the database.",
+            "nullable": true
+          },
+          "league": {
+            "type": "string",
+            "description": "League the match took place in.",
+            "nullable": true
+          },
+          "homeClub": {
+            "type": "string",
+            "description": "Home club for this match.",
+            "nullable": true
+          },
+          "guestClub": {
+            "type": "string",
+            "description": "Club that was guest at this match.",
+            "nullable": true
+          },
+          "contactsToReach": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamContactResponseContract"
+            },
+            "description": "Contacts that were tried to reach.",
+            "nullable": true
+          },
+          "sendMailResults": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "Results of the mail send attempts.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response Contract for created matches."
       },
       "ProblemDetails": {
         "type": "object",
