@@ -31,7 +31,7 @@ jobs:
 
       - name: Build the .NET project
         run: |
-          dotnet publish ./API -c Release -o ./out
+          dotnet publish /API -c Release -o ./out
 
       - name: Build Docker image
         run: |
